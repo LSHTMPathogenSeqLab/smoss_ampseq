@@ -3,6 +3,18 @@ set -euo pipefail
 
 # Pipeline: ONT variant calling and consensus sequence generation using Clair3
 #
+# This script goes through the bam files and makes a consensus fasta sequence for each sample
+# for regions of the genome that you specify in a bed file.
+# It is designed for mosquitoes (diploid) so may need some adjustments for haploid as only one haplotype fasta is needed for plasmodium.
+# 
+# Minimal dependencies you need to download: 
+#
+#clair3
+#samtools
+#bcftools
+#bedtools
+#whatshap
+
 # Outputs layout:
 #   sample_consensus_amplicon_fastas/
 #     ├── <sample>/
